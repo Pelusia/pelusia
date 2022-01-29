@@ -1,0 +1,33 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  xxxl: 1900px,
+);
+
+$container-max-widths: (
+  sm: 640px,
+  lg: 700px,
+  md: 790px,
+  xl: 900px,
+  xxl: 990px,
+  xxxl: 1200px,
+);
+
+$spacer: 1rem;
+
+$primary: #39c7e9;
+$black: #000000;
+
+@import '~bootstrap/scss/bootstrap-utilities.scss';
+@import '~bootstrap/scss/root';
+@import '~bootstrap/scss/reboot';
+@import '~bootstrap/scss/type';
+@import '~bootstrap/scss/vendor/rfs';
+@import '~bootstrap/scss/containers';
+@import '~bootstrap/scss/grid';
+@import '~bootstrap/scss/navbar';
+@import '~bootstrap/scss/transitions';

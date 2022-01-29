@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "jsx": "react",
+    "baseUrl": "src",
+    "skipLibCheck": true
+  },
+  "include": [
+    "./src/**/*"
+  ],
+}

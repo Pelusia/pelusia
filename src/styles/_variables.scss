@@ -1,0 +1,17 @@
+@use 'sass:map';
+
+$header-font-family: 'Outfit', 'Avenir Next', 'Roboto', 'Helvetica Neue', sans-serif;
+$header-font-weight: 400;
+$base-font-size: 14px;
+$base-font-color: $black;
+
+$body-color: $black;
+$text-highlight-color: rgba($primary, 0.5);
+
+$footer-base-height: map-get($spacers, 5);
+$footer-sm-height: $footer-base-height + 1rem;
+$footer-height: $footer-base-height + 2.2rem;
+$layout-lg-pt: map-get($spacers, 5);
+$navigation-height: $spacer * 3.93; // estimated from current setup in main.scss & Navigation.tsx
+
+$border-style: 3px solid $text-highlight-color;
