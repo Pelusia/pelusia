@@ -1,8 +1,13 @@
 import { graphql } from 'gatsby';
 import * as React from 'react';
 import Layout from 'components/Layout';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import Gif from 'components/Gif';
+import ProjectRightLayout from 'components/projects/ProjectRightLayout';
+
+const mapDisplayTypeToLayout = {
+  'text-right': ProjectRightLayout,
+  'text-left': ProjectRightLayout,
+  'text-bellow': ProjectRightLayout,
+};
 
 export default function Index({ data, location }) {
   const { allContentfulProject } = data;
@@ -13,52 +18,11 @@ export default function Index({ data, location }) {
       <section id='projects'>
         <ul className='list-unstyled'>
           {projects.map((project, i) => {
-            const { title, exhibition, location, date, description, displayType, pictures } = project;
-            console.log(project);
+            const { displayType } = project;
+            const Layout = mapDisplayTypeToLayout['text-right'];
             return (
               <li key={i} className='project'>
-                <h2 className='visually-hidden'>{title}</h2>
-                <div className='container-fluid'>
-                  <ul className='row list-unstyled'>
-                    {pictures.map((pic) => {
-                      if (pic.file.contentType.includes('gif')) {
-                        return (
-                          <li className='col'>
-                            <Gif
-                              url={pic.file.url}
-                              alt={`${project.title} project animated picture`}
-                              className='pic-max-height'
-                            />
-                          </li>
-                        );
-                      } else {
-                        return (
-                          <li className='col'>
-                            <GatsbyImage
-                              objectFit='contain'
-                              image={getImage(pic)}
-                              alt={`${project.title} project picture`}
-                              className='pic-max-height'
-                            />
-                          </li>
-                        );
-                      }
-                    })}
-                    <li className='col'>
-                      <p className='details'>
-                        {exhibition ? <span className='exhibition me-2'>{exhibition},</span> : null}
-                        {location ? <span className='location me-2'>{location},</span> : null}
-                        <span className='date me-2'>{date}</span>
-                      </p>
-                      <p
-                        className='description'
-                        dangerouslySetInnerHTML={{
-                          __html: description.childMarkdownRemark.html,
-                        }}
-                      />
-                    </li>
-                  </ul>
-                </div>
+                <Layout data={project} />
               </li>
             );
           })}
@@ -70,13 +34,18 @@ export default function Index({ data, location }) {
 
 export const query = graphql`
   query {
-    allContentfulProject {
+    allContentfulProject(sort: { fields: date, order: DESC }) {
       edges {
         node {
           title
+          titleGif {
+            file {
+              url
+            }
+          }
           exhibition
           location
-          date
+          date(formatString: "MMMM YYYY")
           description {
             childMarkdownRemark {
               html

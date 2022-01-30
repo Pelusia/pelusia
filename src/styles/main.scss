@@ -5,6 +5,7 @@
 html,
 body {
   background-color: $background-color;
+  z-index: -10;
 }
 
 a {
@@ -89,6 +90,15 @@ a {
 #projects {
   .project {
     margin-bottom: 200px;
+    z-index: 1;
+
+    .title {
+      bottom: -80px;
+      right: 80px;
+      max-width: 300px;
+      max-height: 300px;
+      z-index: 0;
+    }
   }
 }
 
