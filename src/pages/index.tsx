@@ -2,6 +2,7 @@ import { graphql } from 'gatsby';
 import * as React from 'react';
 import Layout from 'components/Layout';
 import ProjectRightLayout from 'components/projects/ProjectRightLayout';
+import Gif from 'components/Gif';
 
 const mapDisplayTypeToLayout = {
   'text-right': ProjectRightLayout,
@@ -10,11 +11,17 @@ const mapDisplayTypeToLayout = {
 };
 
 export default function Index({ data, location }) {
-  const { allContentfulProject } = data;
-  const projects = allContentfulProject.edges.map(({ node }) => node);
+  const { site, hero, allProjects } = data;
+  const projects = allProjects.edges.map(({ node }) => node);
 
   return (
     <Layout location={location} seo={{}}>
+      <section id='hero'>
+        <div className='position-relative w-100 h-100 d-inline-block'>
+          <h1 className='visually-hidden'>{site.siteMetadata.shortTitle}</h1>
+          <Gif className='hero-image position-absolute' url={hero.gif.file.url} alt='' />
+        </div>
+      </section>
       <section id='projects'>
         <ul className='list-unstyled'>
           {projects.map((project, i) => {
@@ -34,7 +41,19 @@ export default function Index({ data, location }) {
 
 export const query = graphql`
   query {
-    allContentfulProject(sort: { fields: date, order: DESC }) {
+    site {
+      siteMetadata {
+        shortTitle
+      }
+    }
+    hero: contentfulLanding {
+      gif {
+        file {
+          url
+        }
+      }
+    }
+    allProjects: allContentfulProject(sort: { fields: date, order: DESC }) {
       edges {
         node {
           title

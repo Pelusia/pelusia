@@ -9,6 +9,7 @@ export default function Imprint({ data }) {
     <Layout seo={{ title: 'Imprint' }}>
       <article
         id='imprint'
+        className='text-max-width'
         dangerouslySetInnerHTML={{
           __html: html,
         }}

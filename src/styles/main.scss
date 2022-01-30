@@ -11,59 +11,20 @@ body {
 a {
   color: $base-font-color;
   text-decoration: none;
-  border-bottom: $border-style;
 
   &:hover {
     color: $body-color;
     background-color: $text-highlight-color;
-    border-bottom: 3px inset transparent;
   }
 }
 
+#navigation {
+  top: 40px;
+  right: 60px;
+  z-index: 100;
+}
+
 #layout {
-  #navigation {
-    // circumvent reactstrap default behaviour of adding a container
-    > .container-fluid {
-      padding: 0;
-    }
-
-    a {
-      font-family: $header-font-family;
-      font-weight: $header-font-weight;
-      border-bottom: 3px inset transparent;
-      font-size: 16px;
-    }
-
-    .active {
-      border-bottom: $border-style;
-
-      &:hover {
-        border-bottom: 3px inset transparent;
-      }
-    }
-
-    @include media-breakpoint-up(lg) {
-      min-width: 240px;
-    }
-    @include media-breakpoint-up(xl) {
-      min-width: 310px;
-    }
-
-    .navbar-brand {
-      font-size: 24px;
-    }
-
-    .navbar-toggler {
-      top: $spacer * 0.09;
-      right: 0;
-      color: $base-font-color !important;
-
-      &:focus {
-        box-shadow: unset;
-      }
-    }
-  }
-
   #content {
     min-height: calc(100vh - #{$navigation-height});
     padding-bottom: $footer-height !important;
@@ -87,6 +48,17 @@ a {
   }
 }
 
+#hero {
+  min-height: calc(100vh - map-get($spacers, 3));
+
+  .hero-image {
+    max-width: 750px;
+    left: 50%;
+    // top: 50%;
+    transform: translate(-50%, 0);
+  }
+}
+
 #projects {
   .project {
     margin-bottom: 200px;
@@ -100,6 +72,10 @@ a {
       z-index: 0;
     }
   }
+}
+
+.text-max-width {
+  max-width: 790px;
 }
 
 .pic-max-height {
