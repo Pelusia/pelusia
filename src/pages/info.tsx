@@ -3,12 +3,12 @@ import * as React from 'react';
 import Layout from 'components/Layout';
 import instagram from 'images/instagram.svg';
 import email from 'images/email.svg';
-import youtube from 'images/youtube.svg';
+import soundcloud from 'images/youtube.svg';
 
 const mapLinkIdsToIcons = {
   email,
   instagram,
-  youtube,
+  soundcloud,
 };
 
 export default function Info({ data }) {
