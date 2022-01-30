@@ -1,17 +1,18 @@
+const path = require('path');
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
-const path = require('path');
-
-const primary = '#37f6ff80';
-const background = '#18181b';
-const author = 'Gatsby Starter';
-const tagline = 'Bootstrap a New Site';
-const siteUrl = 'https://www.gatsby_starter.tld';
+const primary = '#ffffff';
+const background = '#000000';
+const author = 'Pelusia';
+const tagline = '';
+const siteUrl = 'https://pelusia.com';
 const noindex = [
-  '/imprint-and-privacy-policy/',
-  '/imprint-and-privacy-policy',
+  '/privacy-policy',
+  '/privacy-policy/',
+  '/imprint',
+  '/imprint/',
   '/404',
   '/404/',
   '/offline-plugin-app-shell-fallback/',
@@ -26,10 +27,11 @@ module.exports = {
     author,
     description: '',
     siteUrl,
-    navigation: ['projects'],
+    navigation: ['info'],
     links: [
       { name: 'Email', href: 'starter@gmail.com' },
       { name: 'Instagram', href: 'https://instagram.com/gatsby_starter' },
+      { name: 'YouTube', href: 'https://instagram.com/gatsby_starter' },
     ],
     image: '/favicon.png', // image placed in the static folder
     location: { region: 'DE-BE', placename: 'Berlin' },

@@ -3,30 +3,42 @@ import * as React from 'react';
 import Layout from 'components/Layout';
 
 export default function Index({ data, location }) {
-  const seo = { tagline: '' };
+  const { allContentfulProject } = data;
+  const projects = allContentfulProject.edges.map(({ node }) => node);
 
   return (
-    <Layout location={location} seo={seo}>
-      <article id='about'>
-        <div className='bio'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, sunt omnis voluptatibus blanditiis
-          voluptatum excepturi magni impedit ducimus rem, corporis odio et. Veniam mollitia quam ducimus quis reiciendis
-          dolor consequuntur nihil culpa perferendis cupiditate porro corrupti sed expedita debitis nesciunt sit quaerat
-          necessitatibus placeat repellat, eius ullam doloribus at reprehenderit. Ad facere consectetur ipsum quibusdam.
-          Tempora distinctio repellendus delectus porro.
-        </div>
-      </article>
+    <Layout location={location} seo={{}}>
+      <section id='projects'>
+        {projects.map((project, i) => (
+          <div key={i}>
+            <h2>{project.title}</h2>
+            <a href={project.link}>{project.link}</a>
+          </div>
+        ))}
+      </section>
     </Layout>
   );
 }
 
 export const query = graphql`
   query {
-    site {
-      siteMetadata {
-        links {
-          name
-          href
+    allContentfulProject {
+      edges {
+        node {
+          title
+          exhibition
+          location
+          date
+          description {
+            childMarkdownRemark {
+              html
+            }
+          }
+          link
+          displayType
+          pictures {
+            gatsbyImageData
+          }
         }
       }
     }

@@ -34,7 +34,7 @@ export const query = graphql`
         }
       }
     }
-    content: contentfulPrivacyTextTextNode {
+    content: contentfulPrivacyPolicyTextTextNode {
       childMarkdownRemark {
         html
       }
