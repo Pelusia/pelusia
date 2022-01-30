@@ -40,9 +40,17 @@ module.exports = {
     license: '',
   },
   plugins: [
-    'gatsby-plugin-image',
-    'gatsby-plugin-sharp',
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          placeholder: `dominantColor`,
+          backgroundColor: `transparent`,
+        },
+      },
+    },
     'gatsby-transformer-sharp',
+    'gatsby-plugin-image',
     'gatsby-plugin-sass',
     'gatsby-transformer-remark',
     {
@@ -50,12 +58,6 @@ module.exports = {
       options: {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
         spaceId: process.env.CONTENTFUL_SPACE_ID,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/config/typography`,
       },
     },
     {

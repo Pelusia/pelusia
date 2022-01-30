@@ -2,8 +2,13 @@
 @import 'variables';
 @import 'typography';
 
+html,
+body {
+  background-color: $background-color;
+}
+
 a {
-  color: $body-color;
+  color: $base-font-color;
   text-decoration: none;
   border-bottom: $border-style;
 
@@ -59,7 +64,6 @@ a {
   }
 
   #content {
-    max-width: 690px;
     min-height: calc(100vh - #{$navigation-height});
     padding-bottom: $footer-height !important;
 
@@ -80,4 +84,14 @@ a {
       height: $footer-sm-height;
     }
   }
+}
+
+#projects {
+  .project {
+    margin-bottom: 200px;
+  }
+}
+
+.pic-max-height {
+  max-height: 650px;
 }

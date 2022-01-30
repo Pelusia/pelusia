@@ -12,8 +12,7 @@
     "start": "npm run develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "init": "npm install bootstrap classnames gatsby gatsby-plugin-image gatsby-plugin-manifest gatsby-plugin-offline gatsby-plugin-robots-txt  gatsby-plugin-react-helmet gatsby-plugin-sharp gatsby-plugin-sitemap gatsby-source-contentful gatsby-source-filesystem gatsby-transformer-remark gatsby-transformer-sharp lodash react react-dom react-helmet reactstrap gatsby-plugin-typography react-typography typography react-obfuscate && npm install gatsby-plugin-sass sass @types/react @types/react-dom @types/react-helmet eslint-config-prettier eslint-plugin-prettier path gatsby-plugin-root-import -D && npm i @typescript-eslint/eslint-plugin -D && npm i @typescript-eslint/parser -D"
+    "clean": "gatsby clean"
   },
   "dependencies": {
     "bootstrap": "^5.1.3",
@@ -37,9 +36,7 @@
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
     "react-obfuscate": "^3.6.8",
-    "react-typography": "^0.16.20",
-    "reactstrap": "^9.0.1",
-    "typography": "^0.16.21"
+    "reactstrap": "^9.0.1"
   },
   "devDependencies": {
     "@types/react": "^17.0.37",

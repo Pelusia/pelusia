@@ -6,14 +6,14 @@ export default function Info({ data }) {
   const { html } = data.about.childMarkdownRemark;
   return (
     <Layout seo={{ title: 'About' }}>
-      <article id='info'>
-        <section
+      <section id='info'>
+        <div
           className='bio'
           dangerouslySetInnerHTML={{
             __html: html,
           }}
-        ></section>
-      </article>
+        ></div>
+      </section>
     </Layout>
   );
 }
