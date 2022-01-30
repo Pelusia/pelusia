@@ -16,13 +16,13 @@ export default function Layout({ location, children, seo }: Props) {
 
   return (
     <div id='layout position-relative'>
-      <div className='px-4 py-3'>
+      <div className='px-4 p-0'>
         <SEO title={seo?.title} tagline={seo?.tagline} description={seo?.description} image={seo?.image} />
         <Navigation brand={shortTitle} links={navigation} location={location} />
-        <main id='content' className='container-fluid position-relative m-0 p-0'>
-          {children}
-        </main>
-        <Footer title={shortTitle} links={links} />
+        <div id='content' className='position-relative'>
+          <main className='container-fluid p-0'>{children}</main>
+          <Footer title={shortTitle} links={links} />
+        </div>
       </div>
     </div>
   );

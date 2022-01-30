@@ -16,7 +16,7 @@ export default function ProjectRightLayout({ data }) {
           {pictures.map((pic) => {
             if (pic.file.contentType.includes('gif')) {
               return (
-                <li className='col'>
+                <li className='col-auto'>
                   <Gif url={pic.file.url} alt={`${title} project animated picture`} className='pic-max-height' />
                 </li>
               );
@@ -33,18 +33,20 @@ export default function ProjectRightLayout({ data }) {
               );
             }
           })}
-          <li className='col'>
-            <p className='details'>
-              {exhibition ? <span className='exhibition me-2'>{exhibition},</span> : null}
-              {location ? <span className='location me-2'>{location},</span> : null}
-              <span className='date me-2'>{date}</span>
-            </p>
-            <p
-              className='description'
-              dangerouslySetInnerHTML={{
-                __html: description.childMarkdownRemark.html,
-              }}
-            />
+          <li className='col-auto'>
+            <div className='description-max-width'>
+              <p className='details'>
+                {exhibition ? <span className='exhibition me-2'>{exhibition},</span> : null}
+                {location ? <span className='location me-2'>{location},</span> : null}
+                <span className='date me-2'>{date}</span>
+              </p>
+              <p
+                className='description'
+                dangerouslySetInnerHTML={{
+                  __html: description.childMarkdownRemark.html,
+                }}
+              />
+            </div>
           </li>
         </ul>
       </div>

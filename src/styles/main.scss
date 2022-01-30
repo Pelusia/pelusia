@@ -24,32 +24,32 @@ a {
   z-index: 100;
 }
 
-#layout {
-  #content {
-    min-height: calc(100vh - #{$navigation-height});
-    padding-bottom: $footer-height !important;
+#content {
+  max-width: 1460px;
+  margin: 0 auto;
+  min-height: calc(100vh - #{$navigation-height});
+  padding-bottom: $footer-height !important;
 
-    @include media-breakpoint-up(lg) {
-      min-height: calc(100vh - #{$layout-lg-pt});
-      padding-bottom: $footer-sm-height !important;
-    }
+  @include media-breakpoint-up(lg) {
+    min-height: calc(100vh - #{$layout-lg-pt});
+    padding-bottom: $footer-sm-height !important;
   }
+}
 
-  #footer {
-    width: 100%;
-    height: $footer-height;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+#footer {
+  width: 100%;
+  height: $footer-height;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 
-    @include media-breakpoint-up(sm) {
-      height: $footer-sm-height;
-    }
+  @include media-breakpoint-up(sm) {
+    height: $footer-sm-height;
   }
 }
 
 #hero {
-  min-height: calc(100vh - map-get($spacers, 3));
+  min-height: 100vh;
 
   .hero-image {
     max-width: 750px;
@@ -61,7 +61,8 @@ a {
 
 #projects {
   .project {
-    margin-bottom: 200px;
+    min-height: 100vh;
+    margin-bottom: 100px;
     z-index: 1;
 
     .title {
@@ -76,6 +77,10 @@ a {
 
 .text-max-width {
   max-width: 790px;
+}
+
+.description-max-width {
+  max-width: 440px;
 }
 
 .pic-max-height {
