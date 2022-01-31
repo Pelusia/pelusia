@@ -34,7 +34,7 @@ export default function ProjectRightLayout({ data }) {
               );
             }
           })}
-          <li className='col order-3'>
+          <li className='col-auto order-3'>
             <div className='description-max-width'>
               <p className='details'>
                 {exhibition ? <span className='exhibition me-2'>{exhibition},</span> : null}
