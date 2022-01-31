@@ -29,7 +29,7 @@ module.exports = {
     siteUrl,
     navigation: ['info'],
     links: [
-      { name: 'Email', href: 'starter@gmail.com' },
+      { name: 'Email', href: 'mateo@pelusia.com' },
       { name: 'Instagram', href: 'https://www.instagram.com/_pelusia/' },
       { name: 'SoundCloud', href: 'https://soundcloud.com/user-43112237' },
     ],
