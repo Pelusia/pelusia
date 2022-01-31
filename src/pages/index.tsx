@@ -3,11 +3,13 @@ import * as React from 'react';
 import Layout from 'components/Layout';
 import ProjectRightLayout from 'components/projects/ProjectRightLayout';
 import Gif from 'components/Gif';
+import ProjectBelowLayout from 'components/projects/ProjectBelowLayout';
+import { simpleFormatString } from 'helpers';
 
 const mapDisplayTypeToLayout = {
   'text-right': ProjectRightLayout,
   'text-left': ProjectRightLayout,
-  'text-bellow': ProjectRightLayout,
+  'text-below': ProjectBelowLayout,
 };
 
 export default function Index({ data, location }) {
@@ -26,7 +28,7 @@ export default function Index({ data, location }) {
         <ul className='list-unstyled'>
           {projects.map((project, i) => {
             const { displayType } = project;
-            const Layout = mapDisplayTypeToLayout['text-right'];
+            const Layout = mapDisplayTypeToLayout[simpleFormatString(displayType)];
             return (
               <li key={i} className='project'>
                 <Layout data={project} />

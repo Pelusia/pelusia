@@ -22,6 +22,10 @@ a {
   top: 40px;
   right: 60px;
   z-index: 100;
+
+  &:hover {
+    background-color: transparent;
+  }
 }
 
 #content {
@@ -66,11 +70,16 @@ a {
     z-index: 1;
 
     .title {
+      max-width: 400px;
+      max-height: 400px;
+      z-index: 0;
+    }
+  }
+
+  .project-layout-right {
+    .title {
       bottom: -80px;
       right: 80px;
-      max-width: 300px;
-      max-height: 300px;
-      z-index: 0;
     }
   }
 }

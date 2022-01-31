@@ -2,13 +2,13 @@ import Gif from 'components/Gif';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 
-export default function ProjectRightLayout({ data }) {
+export default function ProjectBelowLayout({ data }) {
   const { title, titleGif, exhibition, location, date, description, pictures } = data;
   console.log(data);
   return (
     <>
       <h2 className='visually-hidden'>{title}</h2>
-      <div className='container-fluid position-relative project-layout-right'>
+      <div className='container-fluid position-relative project-layout-below'>
         <div className='title position-absolute'>
           <Gif url={titleGif.file.url} className='w-100' />
         </div>
