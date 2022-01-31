@@ -18,10 +18,10 @@ export default function Index({ data, location }) {
 
   return (
     <Layout location={location} seo={{}}>
-      <section id='hero'>
-        <div className='position-relative w-100 h-100 d-inline-block'>
+      <section>
+        <div id='hero' className='d-flex align-items-center justify-content-center'>
+          <Gif className='hero-image' url={hero.gif.file.url} alt='' />
           <h1 className='visually-hidden'>{site.siteMetadata.shortTitle}</h1>
-          <Gif className='hero-image position-absolute' url={hero.gif.file.url} alt='' />
         </div>
       </section>
       <section id='projects'>
