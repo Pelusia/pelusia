@@ -30,8 +30,10 @@ export default function Index({ data, location }) {
             const { displayType } = project;
             const Layout = mapDisplayTypeToLayout[simpleFormatString(displayType)];
             return (
-              <li key={i} className='project'>
-                <Layout data={project} />
+              <li key={i} className='project position-relative'>
+                <div className='wrapper position-absolute'>
+                  <Layout data={project} />
+                </div>
               </li>
             );
           })}

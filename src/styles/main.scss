@@ -69,17 +69,28 @@ a {
     margin-bottom: 100px;
     z-index: 1;
 
+    .wrapper {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
     .title {
-      max-width: 400px;
-      max-height: 400px;
+      max-width: $project-title-width;
+      max-height: $project-title-width;
       z-index: 0;
     }
   }
 
   .project-layout-right {
     .title {
-      bottom: -80px;
-      right: 80px;
+      bottom: calc(#{$project-title-width} * -1 + 100px);
+      left: 30%;
+    }
+  }
+  .project-layout-below {
+    .title {
+      top: calc(#{$project-title-width} * -1 + 100px);
+      left: 80px;
     }
   }
 }
