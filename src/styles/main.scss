@@ -89,7 +89,7 @@ a {
 #projects {
   .project {
     min-height: 100vh;
-    margin-bottom: 100px;
+    margin-bottom: 100vh;
     z-index: 1;
 
     .wrapper {
@@ -104,13 +104,16 @@ a {
     }
   }
 
-  .project-layout-right {
+  .project-layout-complex {
+    max-width: 1224px;
+    margin: 0 auto;
+
     .title {
       bottom: calc(#{$project-title-width} * -1 + 100px);
       left: 30%;
     }
   }
-  .project-layout-below {
+  .project-layout-simple {
     .title {
       top: calc(#{$project-title-width} * -1 + 100px);
       left: 80px;
