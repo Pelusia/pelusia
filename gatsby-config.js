@@ -27,7 +27,6 @@ module.exports = {
     author,
     description: '',
     siteUrl,
-    navigation: ['info'],
     links: [
       { name: 'Email', href: 'mateo@pelusia.com' },
       { name: 'Instagram', href: 'https://www.instagram.com/_pelusia/' },

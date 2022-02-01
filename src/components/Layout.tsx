@@ -11,14 +11,14 @@ type Props = {
 };
 
 export default function Layout({ location, children, seo }: Props) {
-  const { site } = useStaticQuery(query);
-  const { navigation, shortTitle, license, links } = site.siteMetadata;
+  const { site, about } = useStaticQuery(query);
+  const { shortTitle, license, links } = site.siteMetadata;
 
   return (
     <div id='layout position-relative'>
       <div className='px-4 p-0'>
         <SEO title={seo?.title} tagline={seo?.tagline} description={seo?.description} image={seo?.image} />
-        <Navigation brand={shortTitle} links={navigation} location={location} />
+        <Navigation brand={shortTitle} links={links} location={location} bio={about.childMarkdownRemark.html} />
         <div id='content' className='position-relative'>
           <main className='container-fluid p-0'>{children}</main>
           <Footer title={shortTitle} links={links} />
@@ -30,10 +30,14 @@ export default function Layout({ location, children, seo }: Props) {
 
 const query = graphql`
   query {
+    about: contentfulAboutBioTextNode {
+      childMarkdownRemark {
+        html
+      }
+    }
     site {
       siteMetadata {
         shortTitle
-        navigation
         license
         links {
           name
