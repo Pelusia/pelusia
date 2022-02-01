@@ -17,7 +17,7 @@ export default function Navigation({ brand, links, location, bio }) {
   return (
     <div className='d-inline' onMouseOver={() => showInfoBubble(true)} onMouseOut={() => showInfoBubble(false)}>
       <Link to={location?.pathname === '/' ? 'info' : '/'} id='navigation' className='position-fixed p-0'>
-        <img src={bubble} alt='' className='d-inline' />
+        <img src={bubble} alt='' className='info-link d-inline' />
       </Link>
       <InfoBubble brand={brand} links={links} bio={bio} isVisible={infoIsShown} />
     </div>

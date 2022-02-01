@@ -2,7 +2,7 @@ import Gif from 'components/Gif';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 
-export default function ProjectBelowLayout({ data }) {
+export default function ProjectBelowLayout({ data, textPosition }) {
   const { title, titleGif, exhibition, location, date, description, pictures } = data;
   console.log(data);
   return (

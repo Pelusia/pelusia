@@ -1,10 +1,13 @@
+import classNames from 'classnames';
 import Gif from 'components/Gif';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import React from 'react';
+import React, { useState } from 'react';
 
-export default function ProjectRightLayout({ data }) {
+export default function ProjectComplexLayout({ data, textPosition }) {
   const { title, titleGif, exhibition, location, date, description, pictures } = data;
-  console.log(data);
+
+  const [isTextBlurred, setIsTextBlurred] = useState(true);
+
   return (
     <>
       <h2 className='visually-hidden'>{title}</h2>
@@ -34,8 +37,17 @@ export default function ProjectRightLayout({ data }) {
               );
             }
           })}
-          <li className='col-auto order-3'>
-            <div className='description-max-width'>
+          <li
+            className='col-auto order-3'
+            onMouseOver={() => setIsTextBlurred(false)}
+            onMouseOut={() => setIsTextBlurred(true)}
+          >
+            <div
+              className={classNames('description-max-width', {
+                'blur-fade-in': isTextBlurred,
+                'blur-fade-out': !isTextBlurred,
+              })}
+            >
               <p className='details'>
                 {exhibition ? <span className='exhibition me-2'>{exhibition},</span> : null}
                 {location ? <span className='location me-2'>{location},</span> : null}

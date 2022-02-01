@@ -1,15 +1,15 @@
 import { graphql } from 'gatsby';
 import * as React from 'react';
 import Layout from 'components/Layout';
-import ProjectRightLayout from 'components/projects/ProjectRightLayout';
+import ProjectComplexLayout from 'components/projects/ProjectComplexLayout';
 import Gif from 'components/Gif';
-import ProjectBelowLayout from 'components/projects/ProjectBelowLayout';
+import ProjectSimpleLayout from 'components/projects/ProjectSimpleLayout';
 import { simpleFormatString } from 'helpers';
 
 const mapDisplayTypeToLayout = {
-  'text-right': ProjectRightLayout,
-  'text-left': ProjectRightLayout,
-  'text-below': ProjectBelowLayout,
+  'text-right': ProjectComplexLayout,
+  'text-left': ProjectComplexLayout,
+  'text-below': ProjectSimpleLayout,
 };
 
 export default function Index({ data, location }) {
@@ -28,11 +28,12 @@ export default function Index({ data, location }) {
         <ul className='list-unstyled'>
           {projects.map((project, i) => {
             const { displayType } = project;
-            const Layout = mapDisplayTypeToLayout[simpleFormatString(displayType)];
+            const displayTypeId = simpleFormatString(displayType);
+            const Layout = mapDisplayTypeToLayout[displayTypeId];
             return (
               <li key={i} className='project position-relative'>
                 <div className='wrapper position-absolute'>
-                  <Layout data={project} />
+                  <Layout data={project} textPosition={displayTypeId} />
                 </div>
               </li>
             );

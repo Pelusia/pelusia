@@ -26,6 +26,32 @@ a {
   &:hover {
     background-color: transparent;
   }
+
+  .info-link {
+    max-width: 82px;
+  }
+}
+
+#info {
+  width: 376px;
+  height: 376px;
+  padding: 3rem;
+  color: $black;
+  text-align: center;
+  background-image: url('../images/info-lg.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  top: 0.75rem;
+  right: 1rem;
+  z-index: 100;
+
+  .content {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+  }
 }
 
 #content {
@@ -56,11 +82,7 @@ a {
   min-height: 100vh;
 
   .hero-image {
-    max-width: 750px;
-    // left: 50%;
-    // top: 50%;
-    // transform: translate(-50%, -50%);
-    // transform-origin: center;
+    max-width: 768px;
   }
 }
 
@@ -96,38 +118,16 @@ a {
   }
 }
 
-#info {
-  width: 600px;
-  height: 600px;
-  padding: 3rem;
-  color: $black;
-  text-align: center;
-  background-image: url('../images/info-lg.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  top: 0.75rem;
-  right: 1rem;
-  z-index: 100;
-
-  .content {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 450px;
-  }
-}
-
 .text-max-width {
   max-width: 790px;
 }
 
 .description-max-width {
-  max-width: 320px;
+  max-width: 300px;
 }
 
 .pic-max-height {
-  max-height: 650px;
+  max-height: $project-pic-max-height;
 }
 
 .link-icon {
@@ -137,11 +137,30 @@ a {
 .fade-out {
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0s linear 300ms, opacity 300ms;
+  transition: visibility 0s linear 200ms, opacity 200ms;
 }
 
 .fade-in {
   visibility: visible;
   opacity: 1;
-  transition: visibility 0s linear 0s, opacity 300ms;
+  transition: visibility 0s linear 0s, opacity 200ms;
+}
+
+$blur-transition-time: 200ms;
+.blur-fade-in {
+  p,
+  span {
+    // color: transparent;
+    // text-shadow: 0 0 12px rgba($base-font-color, 1);
+    // transition: color 0s linear $blur-transition-time, text-shadow 0s linear $blur-transition-time;
+  }
+}
+
+.blur-fade-out {
+  p,
+  span {
+    color: $base-font-color;
+    text-shadow: none;
+    // transition: color 50s linear 100ms, text-shadow 0s linear $blur-transition-time;
+  }
 }
