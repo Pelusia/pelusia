@@ -91,6 +91,11 @@ export const query = graphql`
               url
             }
           }
+          pictureCredit {
+            childMarkdownRemark {
+              html
+            }
+          }
         }
       }
     }

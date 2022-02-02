@@ -4,7 +4,7 @@ import React from 'react';
 import ProjectDescription from './ProjectDescription';
 
 export default function ProjectSimpleLayout({ data, textPosition }) {
-  const { title, titleGif, exhibition, location, date, description, pictures } = data;
+  const { title, titleGif, exhibition, location, date, description, pictures, pictureCredit } = data;
   console.log('hello', title);
   return (
     <>
@@ -33,6 +33,7 @@ export default function ProjectSimpleLayout({ data, textPosition }) {
             exhibition={exhibition}
             location={location}
             description={description}
+            pictureCredit={pictureCredit}
             isTextBlurred={false}
           />
         </div>

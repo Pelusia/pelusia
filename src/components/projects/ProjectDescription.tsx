@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import * as React from 'react';
 
-export default function ProjectDescription({ exhibition, location, description, isTextBlurred }) {
+export default function ProjectDescription({ exhibition, location, description, pictureCredit, isTextBlurred }) {
   return (
     <div
       className={classNames('description-max-width', {
@@ -19,6 +19,14 @@ export default function ProjectDescription({ exhibition, location, description, 
           __html: description.childMarkdownRemark.html,
         }}
       />
+      {pictureCredit ? (
+        <small
+          className='credit'
+          dangerouslySetInnerHTML={{
+            __html: pictureCredit?.childMarkdownRemark.html,
+          }}
+        />
+      ) : null}
     </div>
   );
 }
