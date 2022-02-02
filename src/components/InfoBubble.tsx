@@ -1,7 +1,7 @@
 import React from 'react';
 import instagram from 'images/instagram.svg';
 import email from 'images/email.svg';
-import soundcloud from 'images/soundcloud.png';
+import soundcloud from 'images/soundcloud.svg';
 import classNames from 'classnames';
 
 const mapLinkIdsToIcons = {
@@ -28,14 +28,15 @@ export default function InfoBubble({ brand, links, bio, isVisible }) {
             __html: bio,
           }}
         ></div>
-        <ul className='list-unstyled d-flex justify-content-center'>
+        <ul className='list-unstyled d-flex justify-content-center align-items-center'>
           {links.map((link) => {
+            const id = link.name.toLowerCase();
             return (
               <li>
                 <a href={link.href} about='_blank' rel='noreferrer noopener'>
                   <img
-                    src={mapLinkIdsToIcons[link.name.toLowerCase()]}
-                    className='link-icon w-100 me-4'
+                    src={mapLinkIdsToIcons[id]}
+                    className={classNames('link-icon w-100 me-4', { soundcloud: id === 'soundcloud' })}
                     alt={`${link.name} icon`}
                   />
                 </a>
