@@ -15,7 +15,7 @@ export default function Layout({ location, children, seo }: Props) {
   const { shortTitle, license, links } = site.siteMetadata;
 
   return (
-    <div id='layout position-relative'>
+    <div id='layout' className='position-relative'>
       <div className='px-4 p-0'>
         <SEO title={seo?.title} tagline={seo?.tagline} description={seo?.description} image={seo?.image} />
         <Navigation brand={shortTitle} links={links} location={location} bio={about.childMarkdownRemark.html} />

@@ -11,10 +11,10 @@ body {
 a {
   color: $base-font-color;
   text-decoration: none;
+  border-bottom: $border-style;
 
   &:hover {
-    color: $body-color;
-    background-color: $text-highlight-color;
+    color: $base-font-color;
   }
 }
 
@@ -22,9 +22,10 @@ a {
   top: 40px;
   right: 60px;
   z-index: 100;
+  border: none;
 
   &:hover {
-    background-color: transparent;
+    border: none;
   }
 
   .info-link {
@@ -88,22 +89,32 @@ a {
 }
 
 #hero {
+  height: 200vw;
+  @include media-breakpoint-up(md) {
+    height: unset;
+  }
+
   min-height: 100vh;
 
   .hero-image {
+    width: 90vw;
+
+    @include media-breakpoint-up(md) {
+      width: 80vw;
+    }
     max-width: 768px;
   }
 }
 
 #projects {
   .project {
-    min-height: 100vh;
-    margin-bottom: 100vh;
+    min-height: $project-min-height;
+    margin-top: $project-pt;
+    margin-bottom: $project-pb;
     z-index: 1;
 
-    .wrapper {
-      top: 50%;
-      transform: translateY(-50%);
+    li {
+      z-index: 2;
     }
 
     .title {
@@ -115,35 +126,48 @@ a {
 
   .project-layout-complex {
     max-width: 1224px;
-    margin: 0 auto;
 
-    .title {
-      bottom: calc(#{$project-title-width} * -1 + 100px);
-      left: 30%;
+    &.layout-left {
+      .title {
+        bottom: calc(#{$project-title-width} * -1 + 100px);
+        left: 30%;
+      }
+    }
+
+    &.layout-right {
+      .title {
+        bottom: calc(#{$project-title-width} * -1 + 280px);
+        right: 0;
+      }
     }
   }
+
   .project-layout-simple {
     .title {
       top: calc(#{$project-title-width} * -1 + 100px);
       left: 80px;
     }
+
+    .description-max-width {
+      max-width: calc(#{$project-pic-max-width} / 2);
+    }
   }
 }
 
 .text-max-width {
-  max-width: 790px;
+  max-width: $full-text-max-width;
 }
 
 .description-max-width {
-  max-width: 300px;
+  max-width: $project-text-max-width;
 }
 
 .pic-max-height {
   max-height: $project-pic-max-height;
 }
 
-.link-icon {
-  max-height: 1.3rem;
+.pic-max-width {
+  max-width: $project-pic-max-width;
 }
 
 .fade-out {

@@ -1,8 +1,9 @@
 import { graphql } from 'gatsby';
 import * as React from 'react';
+import classNames from 'classnames';
 import Layout from 'components/Layout';
-import ProjectComplexLayout from 'components/projects/ProjectComplexLayout';
 import Gif from 'components/Gif';
+import ProjectComplexLayout from 'components/projects/ProjectComplexLayout';
 import ProjectSimpleLayout from 'components/projects/ProjectSimpleLayout';
 import { simpleFormatString } from 'helpers';
 
@@ -31,10 +32,17 @@ export default function Index({ data, location }) {
             const displayTypeId = simpleFormatString(displayType);
             const Layout = mapDisplayTypeToLayout[displayTypeId];
             return (
-              <li key={i} className='project position-relative'>
-                <div className='wrapper position-absolute'>
-                  <Layout data={project} textPosition={displayTypeId} />
-                </div>
+              <li
+                key={i}
+                className={classNames('project container-fluid position-relative gx-0', {
+                  'project-layout-simple': displayTypeId === 'text-below',
+                  'project-layout-complex': displayTypeId !== 'text-below',
+                  'layout-left': displayTypeId === 'text-left',
+                  'layout-right': displayTypeId === 'text-right',
+                })}
+              >
+                <h2 className='visually-hidden'>{project.title}</h2>
+                <Layout data={project} textPosition={displayTypeId} />
               </li>
             );
           })}
