@@ -11,9 +11,7 @@ $background-color: $black;
 $text-highlight-color: rgba($primary, 0.5);
 $border-style: 2px solid $base-font-color;
 
-$footer-base-height: map-get($spacers, 5) * 0.9;
-$footer-sm-height: $footer-base-height + 1rem;
-$footer-height: $footer-base-height + 2.2rem;
+$footer-height: 5.375rem;
 $layout-lg-pt: map-get($spacers, 5);
 
 $project-title-width: 376px;

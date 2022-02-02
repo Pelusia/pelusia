@@ -69,11 +69,6 @@ a {
   margin: 0 auto;
   min-height: 100vh;
   padding-bottom: $footer-height !important;
-
-  @include media-breakpoint-up(lg) {
-    // min-height: calc(100vh - #{$layout-lg-pt});
-    // padding-bottom: $footer-sm-height !important;
-  }
 }
 
 #footer {
@@ -82,10 +77,6 @@ a {
   position: absolute;
   bottom: 0;
   left: 0;
-
-  @include media-breakpoint-up(sm) {
-    height: $footer-sm-height;
-  }
 }
 
 #hero {
