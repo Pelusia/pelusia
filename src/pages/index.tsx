@@ -21,7 +21,7 @@ export default function Index({ data, location }) {
     <Layout location={location} seo={{}}>
       <section>
         <div id='hero' className='d-flex align-items-center justify-content-center'>
-          <Gif className='hero-image' url={hero.gif.file.url} alt='' />
+          <Gif className='hero-image' url={hero.gif.file.url} alt='Pelusia webpage title' />
           <h1 className='visually-hidden'>{site.siteMetadata.shortTitle}</h1>
         </div>
       </section>

@@ -6,7 +6,7 @@ export const projectTitleWidth = {
   xl: 376,
 };
 
-export const breakpoints = (vw: number): 'xs' | 'sm' | 'md' | 'lg' | 'xl' => {
+export const breakpoints = (vw: number) => {
   let b = 'xs';
   if (vw < 768) {
     b = 'sm';

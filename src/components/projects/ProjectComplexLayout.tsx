@@ -31,7 +31,12 @@ export default function ProjectComplexLayout({ data, textPosition }) {
   return (
     <>
       <div className='title position-absolute'>
-        <Gif url={titleGif.file.url} className='w-100' height={projectTitleWidth[breakpoint]} />
+        <Gif
+          url={titleGif.file.url}
+          className='w-100'
+          height={projectTitleWidth[breakpoint]}
+          alt={`${title} project animated title`}
+        />
       </div>
       <ul className='row list-unstyled gx-3 justify-content-center'>
         {pictures.map((pic, i) => {

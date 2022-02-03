@@ -9,7 +9,7 @@ export default function ProjectSimpleLayout({ data, textPosition }) {
   return (
     <>
       <div className='title position-absolute'>
-        <Gif url={titleGif.file.url} className='w-100' />
+        <Gif url={titleGif.file.url} className='w-100' alt={`${title} project animated title`} />
       </div>
       <div>
         {pictures.map((pic) => {
