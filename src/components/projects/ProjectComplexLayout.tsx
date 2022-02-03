@@ -31,26 +31,28 @@ export default function ProjectComplexLayout({ data, textPosition }) {
       <div className='title position-absolute'>
         <Gif url={titleGif.file.url} className='w-100' />
       </div>
-      <ul className='row list-unstyled gx-2 justify-content-center'>
+      <ul className='row list-unstyled gx-3 justify-content-center'>
         {pictures.map((pic, i) => {
           const iLayout = isLayoutLeft ? i + 1 : i; // text is in order 1 in layout left
           let classNames = picClassNamesByIndex[iLayout];
+          let picClassName = 'pic-max-height';
           if (i === highestRatioPicIndex) {
             const orderSm = picHightRatioMobileOrderByLayout[textPosition];
             classNames += ` col col-xl-auto ${orderSm}`;
+            picClassName += ' high-ratio-pic-max-width';
           } else {
             classNames += ` col-12 col-xl order-1`;
           }
           return (
             <li className={classNames}>
               {pic.file.contentType.includes('gif') ? (
-                <Gif url={pic.file.url} alt={`${title} project animated picture`} className='pic-max-height' />
+                <Gif url={pic.file.url} alt={`${title} project animated picture`} className={picClassName} />
               ) : (
                 <GatsbyImage
                   objectFit='contain'
                   image={getImage(pic)!}
                   alt={`${title} project picture`}
-                  className='pic-max-height'
+                  className={picClassName}
                 />
               )}
             </li>

@@ -65,7 +65,7 @@ a {
 }
 
 #content {
-  max-width: 1460px;
+  max-width: $content-max-width;
   margin: 0 auto;
   min-height: 100vh;
   padding-bottom: $footer-height !important;
@@ -159,6 +159,10 @@ a {
 
 .pic-max-width {
   max-width: $project-pic-max-width;
+}
+
+.high-ratio-pic-max-width {
+  max-width: $project-high-ratio-pic-max-width;
 }
 
 .fade-out {

@@ -14,9 +14,11 @@ $border-style: 2px solid $base-font-color;
 $footer-height: 5.375rem;
 $layout-lg-pt: map-get($spacers, 5);
 
+$content-max-width: 1460px;
 $project-title-width: 376px;
 $project-pic-max-height: 700px;
 $project-pic-max-width: 965px;
+$project-high-ratio-pic-max-width: 376px;
 $project-text-max-width: 300px;
 $full-text-max-width: 790px;
 $info-bubble-max-width: 440px;
