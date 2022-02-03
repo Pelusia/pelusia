@@ -116,7 +116,7 @@ a {
   }
 
   .project-layout-complex {
-    max-width: 1224px;
+    max-width: $project-complex-max-width;
 
     &.layout-left {
       .title {
@@ -134,6 +134,8 @@ a {
   }
 
   .project-layout-simple {
+    max-width: $project-complex-max-width;
+
     .title {
       top: calc(#{$project-title-width} * -1 + 100px);
       left: 80px;
