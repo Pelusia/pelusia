@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React, { useState } from 'react';
 import max from 'lodash/max';
 import ProjectDescription from './ProjectDescription';
+import { breakpoints, projectTitleWidth } from 'config';
 
 const picClassNamesByIndex = {
   0: 'order-xl-1',
@@ -25,11 +26,12 @@ export default function ProjectComplexLayout({ data, textPosition }) {
     return height - width;
   });
   const highestRatioPicIndex = whRatios.indexOf(max(whRatios));
+  const breakpoint = breakpoints(window.innerWidth);
 
   return (
     <>
       <div className='title position-absolute'>
-        <Gif url={titleGif.file.url} className='w-100' />
+        <Gif url={titleGif.file.url} className='w-100' height={projectTitleWidth[breakpoint]} />
       </div>
       <ul className='row list-unstyled gx-3 justify-content-center'>
         {pictures.map((pic, i) => {
