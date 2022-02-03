@@ -16,14 +16,18 @@ $layout-lg-pt: map-get($spacers, 5);
 
 $content-max-width: 1460px;
 $project-title-width: 376px;
-$project-pic-max-height: 700px;
+$project-pic-max-height: 900px;
+$project-pic-xl-max-height: 700px;
 $project-pic-max-width: 965px;
 $project-high-ratio-pic-max-width: 376px;
 $project-text-max-width: 300px;
 $full-text-max-width: 790px;
 $info-bubble-max-width: 440px;
 
-$project-complex-max-width: 1300px;
+$project-complex-max-width: 760px;
+$project-complex-xl-max-width: 1300px;
+
+$project-simple-max-width: $project-pic-max-width + 140px;
 
 $project-pt: 30vh;
 $project-pb: 70vh;

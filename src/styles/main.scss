@@ -118,27 +118,43 @@ a {
   .project-layout-complex {
     max-width: $project-complex-max-width;
 
+    @include media-breakpoint-up(xl) {
+      max-width: $project-complex-xl-max-width;
+    }
+
     &.layout-left {
       .title {
-        bottom: calc(#{$project-title-width} * -1 + 100px);
-        left: 30%;
+        top: calc(#{$project-title-width} * -1 + 130px);
+        right: 70px;
+
+        @include media-breakpoint-up(xl) {
+          top: calc(#{$project-title-width} * -1 + 130px);
+          right: 70px;
+        }
       }
     }
 
     &.layout-right {
       .title {
-        bottom: calc(#{$project-title-width} * -1 + 280px);
-        right: 0;
+        top: calc(#{$project-title-width} * -1 + 120px);
+        left: 0;
+
+        @include media-breakpoint-up(xl) {
+          bottom: calc(#{$project-title-width} * -1 + 280px);
+          right: 0;
+          top: unset;
+          left: unset;
+        }
       }
     }
   }
 
   .project-layout-simple {
-    max-width: $project-complex-max-width;
+    max-width: $project-simple-max-width;
 
     .title {
-      top: calc(#{$project-title-width} * -1 + 100px);
-      left: 80px;
+      top: calc(#{$project-title-width} * -1 + 120px);
+      left: 0;
     }
 
     .description-max-width {
@@ -157,6 +173,10 @@ a {
 
 .pic-max-height {
   max-height: $project-pic-max-height;
+
+  @include media-breakpoint-up(xl) {
+    max-height: $project-pic-xl-max-height;
+  }
 }
 
 .pic-max-width {

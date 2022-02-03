@@ -41,7 +41,7 @@ export default function ProjectComplexLayout({ data, textPosition }) {
             classNames += ` col col-xl-auto ${orderSm}`;
             picClassName += ' high-ratio-pic-max-width';
           } else {
-            classNames += ` col-12 col-xl order-1`;
+            classNames += ` col-12 col-xl order-1 mb-3 mb-xl-0`;
           }
           return (
             <li className={classNames}>
