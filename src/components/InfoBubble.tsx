@@ -33,7 +33,7 @@ export default function InfoBubble({ brand, links, bio, isVisible }) {
             const id = link.name.toLowerCase();
             return (
               <li>
-                <a href={link.href} about='_blank' rel='noreferrer noopener'>
+                <a href={link.href} target='_blank' rel='noreferrer noopener'>
                   <img
                     src={mapLinkIdsToIcons[id]}
                     className={classNames('link-icon w-100 me-4', { soundcloud: id === 'soundcloud' })}
