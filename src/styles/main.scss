@@ -86,12 +86,11 @@ a {
 }
 
 #hero {
-  height: 150vw;
+  height: 4 * 100vw / 3;
   @include media-breakpoint-up(md) {
     height: unset;
+    min-height: 100vh;
   }
-
-  min-height: 100vh;
 
   .hero-image {
     width: 90vw;
