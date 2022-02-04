@@ -86,7 +86,7 @@ a {
 }
 
 #hero {
-  // height: 200vw;
+  height: 150vw;
   @include media-breakpoint-up(md) {
     height: unset;
   }
