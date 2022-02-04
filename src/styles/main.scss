@@ -86,7 +86,7 @@ a {
 }
 
 #hero {
-  height: 4 * 100vw / 3;
+  height: calc(4 * 100vw / 3);
   @include media-breakpoint-up(md) {
     height: unset;
     min-height: 100vh;
