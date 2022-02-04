@@ -30,10 +30,10 @@ a {
   }
 
   .info-link {
-    max-width: 60px;
+    width: 60px;
 
     @include media-breakpoint-up(xl) {
-      max-width: 82px;
+      width: 82px;
     }
   }
 }

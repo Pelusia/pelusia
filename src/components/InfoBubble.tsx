@@ -36,6 +36,7 @@ export default function InfoBubble({ brand, links, bio, isVisible }) {
                 <a href={link.href} target='_blank' rel='noreferrer noopener'>
                   <img
                     src={mapLinkIdsToIcons[id]}
+                    width='100%'
                     className={classNames('link-icon w-100 me-4', { soundcloud: id === 'soundcloud' })}
                     alt={`${link.name} icon`}
                   />
