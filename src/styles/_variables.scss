@@ -15,7 +15,8 @@ $footer-height: 5.375rem;
 $layout-lg-pt: map-get($spacers, 5);
 
 $content-max-width: 1460px;
-$project-title-width: 376px;
+$project-title-width: 260px;
+$project-title-xl-width: 376px;
 $project-pic-max-height: 900px;
 $project-pic-xl-max-height: 700px;
 $project-pic-max-width: 965px;
@@ -27,7 +28,8 @@ $info-bubble-max-width: 440px;
 $project-complex-max-width: 760px;
 $project-complex-xl-max-width: 1300px;
 
-$project-simple-max-width: $project-pic-max-width + 140px;
+$project-simple-max-width: $project-complex-max-width + 100px;
+$project-simple-xl-max-width: $project-pic-max-width + 140px;
 
 $project-pt: 30vh;
 $project-pb: 70vh;

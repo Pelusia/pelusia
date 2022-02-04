@@ -6,6 +6,7 @@ html,
 body {
   background-color: $background-color;
   z-index: -10;
+  // min-height: -webkit-fill-available;
 }
 
 a {
@@ -29,7 +30,11 @@ a {
   }
 
   .info-link {
-    max-width: 82px;
+    max-width: 60px;
+
+    @include media-breakpoint-up(xl) {
+      max-width: 82px;
+    }
   }
 }
 
@@ -67,7 +72,8 @@ a {
 #content {
   max-width: $content-max-width;
   margin: 0 auto;
-  min-height: 100vh;
+  min-height: calc(100vh - map-get($spacers, 5));
+  // min-height: -webkit-fill-available;
   padding-bottom: $footer-height !important;
 }
 
@@ -111,6 +117,11 @@ a {
     .title {
       max-width: $project-title-width;
       max-height: $project-title-width;
+
+      @include media-breakpoint-up(xl) {
+        max-width: $project-title-xl-width;
+      }
+
       z-index: 0;
     }
   }
@@ -124,11 +135,17 @@ a {
 
     &.layout-left {
       .title {
-        top: calc(#{$project-title-width} * -1 + 130px);
-        right: 70px;
+        width: $project-title-width;
+        max-width: $project-title-xl-width;
+        top: calc(#{$project-title-width} * -1 + 90px);
+        left: 50%;
+        transform: translateX(-50%);
 
+        @include media-breakpoint-up(sm) {
+          width: $project-title-xl-width;
+          top: calc(#{$project-title-xl-width} * -1 + 130px);
+        }
         @include media-breakpoint-up(xl) {
-          top: calc(#{$project-title-width} * -1 + 130px);
           right: 70px;
         }
       }
@@ -136,11 +153,11 @@ a {
 
     &.layout-right {
       .title {
-        top: calc(#{$project-title-width} * -1 + 120px);
+        top: calc(#{$project-title-width} * -1 + 70px);
         left: 0;
 
         @include media-breakpoint-up(xl) {
-          bottom: calc(#{$project-title-width} * -1 + 280px);
+          bottom: calc(#{$project-title-xl-width} * -1 + 280px);
           right: 0;
           top: unset;
           left: unset;
@@ -152,9 +169,18 @@ a {
   .project-layout-simple {
     max-width: $project-simple-max-width;
 
+    @include media-breakpoint-up(xl) {
+      max-width: $project-simple-xl-max-width;
+    }
+
     .title {
-      top: calc(#{$project-title-width} * -1 + 120px);
-      left: 0;
+      top: calc(#{$project-title-width} * -1 + 80px);
+      right: 15px;
+
+      @include media-breakpoint-up(xl) {
+        top: calc(#{$project-title-xl-width} * -1 + 120px);
+        left: 0;
+      }
     }
 
     .description-max-width {
