@@ -7,7 +7,7 @@ export const projectTitleWidth = {
   0: undefined,
 };
 
-export const breakpoints = (vw: number) => {
+export const getBreakpoint = () => {
   if (typeof window !== 'undefined') {
     const vw = window.innerWidth;
     let b = 'xs';

@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React, { useState } from 'react';
 import max from 'lodash/max';
 import ProjectDescription from './ProjectDescription';
-import { breakpoints, projectTitleWidth } from 'config';
+import { getBreakpoint, projectTitleWidth } from 'config';
 
 const picClassNamesByIndex = {
   0: 'order-xl-1',
@@ -26,7 +26,7 @@ export default function ProjectComplexLayout({ data, textPosition }) {
     return height - width;
   });
   const highestRatioPicIndex = whRatios.indexOf(max(whRatios));
-  const breakpoint = breakpoints(window.innerWidth);
+  const breakpoint = getBreakpoint();
 
   return (
     <>
