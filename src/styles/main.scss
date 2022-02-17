@@ -156,7 +156,7 @@ a {
         left: 0;
 
         @include media-breakpoint-up(xl) {
-          bottom: calc(#{$project-title-xl-width} * -1 + 280px);
+          bottom: calc(#{$project-title-xl-width} * -1 + 460px);
           right: 0;
           top: unset;
           left: unset;
@@ -224,13 +224,11 @@ a {
   transition: visibility 0s linear 0s, opacity 200ms;
 }
 
-$blur-transition-time: 200ms;
 .blur-fade-in {
   p,
   span {
-    // color: transparent;
-    // text-shadow: 0 0 12px rgba($base-font-color, 1);
-    // transition: color 0s linear $blur-transition-time, text-shadow 0s linear $blur-transition-time;
+    color: transparent;
+    text-shadow: 0 0 12px rgba($base-font-color, 1);
   }
 }
 
@@ -239,6 +237,5 @@ $blur-transition-time: 200ms;
   span {
     color: $base-font-color;
     text-shadow: none;
-    // transition: color 50s linear 100ms, text-shadow 0s linear $blur-transition-time;
   }
 }
