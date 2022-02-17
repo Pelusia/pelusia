@@ -2,12 +2,14 @@ import React from 'react';
 import instagram from 'images/instagram.svg';
 import email from 'images/email.svg';
 import soundcloud from 'images/soundcloud.svg';
+import youtube from 'images/youtube.svg';
 import classNames from 'classnames';
 
 const mapLinkIdsToIcons = {
   email,
   instagram,
   soundcloud,
+  youtube,
 };
 
 export default function InfoBubble({ brand, links, bio, isVisible }) {
