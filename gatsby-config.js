@@ -28,7 +28,7 @@ module.exports = {
     description: '',
     siteUrl,
     links: [
-      { name: 'Email', href: 'mateo@pelusia.com' },
+      { name: 'Email', href: 'contact@pelusia.com' },
       { name: 'Instagram', href: 'https://www.instagram.com/_pelusia/' },
       { name: 'YouTube', href: 'https://www.youtube.com/channel/UCDnf1mu6ENVF66sfLctSZFg' },
       { name: 'SoundCloud', href: 'https://soundcloud.com/user-431122371' },
