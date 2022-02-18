@@ -30,7 +30,7 @@ module.exports = {
     links: [
       { name: 'Email', href: 'mateo@pelusia.com' },
       { name: 'Instagram', href: 'https://www.instagram.com/_pelusia/' },
-      { name: 'YouTube', href: '' },
+      { name: 'YouTube', href: 'https://www.youtube.com/channel/UCDnf1mu6ENVF66sfLctSZFg' },
       { name: 'SoundCloud', href: 'https://soundcloud.com/user-431122371' },
     ],
     image: '/favicon.png', // image placed in the static folder
