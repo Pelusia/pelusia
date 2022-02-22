@@ -107,7 +107,7 @@ module.exports = {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: siteUrl,
-        policy: [{ userAgent: '*', allow: '/', disallow: noindex }],
+        policy: [{ userAgent: '*', disallow: noindex }],
       },
     },
   ],
