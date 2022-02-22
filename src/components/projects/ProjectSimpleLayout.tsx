@@ -5,7 +5,7 @@ import ProjectDescription from './ProjectDescription';
 
 export default function ProjectSimpleLayout({ data, textPosition }) {
   const [isTextBlurred, setIsTextBlurred] = useState(true);
-  const { title, titleGif, exhibition, location, date, description, pictures, pictureCredit } = data;
+  const { title, titleGif, exhibition, location, date, activeDescription: description, pictures, pictureCredit } = data;
 
   return (
     <>

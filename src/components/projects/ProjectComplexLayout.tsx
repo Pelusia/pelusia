@@ -20,7 +20,7 @@ const picHightRatioMobileOrderByLayout = {
 export default function ProjectComplexLayout({ data, textPosition }) {
   const isLayoutLeft = textPosition === 'text-left';
   const [isTextBlurred, setIsTextBlurred] = useState(true);
-  const { title, titleGif, exhibition, location, date, description, pictures, pictureCredit } = data;
+  const { title, titleGif, exhibition, location, date, activeDescription: description, pictures, pictureCredit } = data;
   const whRatios = pictures.map((pic) => {
     const { width, height } = pic.gatsbyImageData;
     return height - width;
