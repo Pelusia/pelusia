@@ -16,9 +16,7 @@ const mapDisplayTypeToLayout = {
 export default function Index({ data, location }) {
   const { site, hero, allProjects } = data;
   const projects = allProjects.edges.map(({ node }) => node);
-
   const screenRatio = getVw() - getVh();
-  console.log(screenRatio);
 
   return (
     <Layout location={location} seo={{}}>
@@ -38,7 +36,8 @@ export default function Index({ data, location }) {
           {projects.map((project, i) => {
             const { displayType } = project;
             const displayTypeId = simpleFormatString(displayType);
-            const Layout = mapDisplayTypeToLayout[displayTypeId];
+            const Project = mapDisplayTypeToLayout[displayTypeId];
+            console.log(project.description.childMarkdownRemark.html);
             return (
               <li
                 key={i}
@@ -50,7 +49,7 @@ export default function Index({ data, location }) {
                 })}
               >
                 <h2 className='visually-hidden'>{project.title}</h2>
-                <Layout data={project} textPosition={displayTypeId} />
+                <Project data={project} textPosition={displayTypeId} />
               </li>
             );
           })}
