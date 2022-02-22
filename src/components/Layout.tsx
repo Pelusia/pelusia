@@ -16,7 +16,7 @@ export default function Layout({ location, children, seo }: Props) {
 
   return (
     <div id='layout' className='position-relative'>
-      <div className='px-4 pt-5'>
+      <div className='px-4'>
         <SEO title={seo?.title} tagline={seo?.tagline} description={seo?.description} image={seo?.image} />
         <Navigation brand={shortTitle} links={links} location={location} bio={about.childMarkdownRemark.html} />
         <div id='content' className='position-relative'>

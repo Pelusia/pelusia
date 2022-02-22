@@ -15,9 +15,9 @@ export default function Footer({ title, links }) {
           </ul>
         </p> */}
         <p className='legal mb-1'>
-          <nav className='d-inline'>
+          <span>
             <Link to='/imprint'>Imprint</Link> &middot; <Link to='/privacy-policy'>Privacy Policy</Link>&nbsp;
-          </nav>
+          </span>
           <span>&copy; {new Date().getFullYear()}&nbsp;</span>
           <span className='text-nowrap'>{title}</span>
         </p>

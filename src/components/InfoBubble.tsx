@@ -34,7 +34,7 @@ export default function InfoBubble({ brand, links, bio, isVisible }) {
           {links.map((link, i) => {
             const id = link.name.toLowerCase();
             return (
-              <li className={classNames({ 'me-4': i < links.length - 1 })}>
+              <li key={i} className={classNames({ 'me-4': i < links.length - 1 })}>
                 <a
                   href={link.href}
                   target='_blank'

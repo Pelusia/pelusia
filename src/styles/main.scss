@@ -117,19 +117,20 @@ a {
 }
 
 #hero {
-  height: calc(4 * 100vw / 3);
-  @include media-breakpoint-up(md) {
-    height: unset;
-    min-height: 100vh;
+  min-height: 100vh;
+
+  &.layout-mobile {
+    min-height: unset;
+    height: calc(3 * 100vw / 4);
   }
 
   .hero-image {
     width: 90vw;
+    max-width: 768px;
 
     @include media-breakpoint-up(md) {
       width: 80vw;
     }
-    max-width: 768px;
   }
 }
 

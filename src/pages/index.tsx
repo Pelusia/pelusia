@@ -5,7 +5,7 @@ import Layout from 'components/Layout';
 import Gif from 'components/Gif';
 import ProjectComplexLayout from 'components/projects/ProjectComplexLayout';
 import ProjectSimpleLayout from 'components/projects/ProjectSimpleLayout';
-import { simpleFormatString } from 'helpers';
+import { getVh, getVw, simpleFormatString } from 'helpers';
 
 const mapDisplayTypeToLayout = {
   'text-right': ProjectComplexLayout,
@@ -17,10 +17,18 @@ export default function Index({ data, location }) {
   const { site, hero, allProjects } = data;
   const projects = allProjects.edges.map(({ node }) => node);
 
+  const screenRatio = getVw() - getVh();
+  console.log(screenRatio);
+
   return (
     <Layout location={location} seo={{}}>
       <section>
-        <div id='hero' className='d-flex align-items-center justify-content-center'>
+        <div
+          id='hero'
+          className={classNames('d-flex align-items-center justify-content-center', {
+            'layout-mobile': screenRatio < 0,
+          })}
+        >
           <Gif className='hero-image' url={hero.gif.file.url} alt='Pelusia webpage title' />
           <h1 className='visually-hidden'>{site.siteMetadata.shortTitle}</h1>
         </div>

@@ -51,7 +51,7 @@ export default function ProjectComplexLayout({ data, textPosition }) {
             classNames += ` col-12 col-xl order-1 mb-3 mb-xl-0`;
           }
           return (
-            <li className={classNames}>
+            <li className={classNames} key={i}>
               {pic.file.contentType.includes('gif') ? (
                 <Gif url={pic.file.url} alt={`${title} project animated picture`} className={picClassName} />
               ) : (

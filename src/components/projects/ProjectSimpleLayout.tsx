@@ -13,9 +13,9 @@ export default function ProjectSimpleLayout({ data, textPosition }) {
         <Gif url={titleGif.file.url} className='w-100' alt={`${title} project animated title`} />
       </div>
       <div>
-        {pictures.map((pic) => {
+        {pictures.map((pic, i) => {
           return (
-            <div className='pic-max-width my-0 mx-auto'>
+            <div key={i} className='pic-max-width my-0 mx-auto'>
               {pic.file.contentType.includes('gif') ? (
                 <Gif url={pic.file.url} alt={`${title} project animated picture`} className='pic-max-height' />
               ) : (
