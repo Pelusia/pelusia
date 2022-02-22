@@ -1,11 +1,12 @@
 import Gif from 'components/Gif';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import React from 'react';
+import React, { useState } from 'react';
 import ProjectDescription from './ProjectDescription';
 
 export default function ProjectSimpleLayout({ data, textPosition }) {
+  const [isTextBlurred, setIsTextBlurred] = useState(true);
   const { title, titleGif, exhibition, location, date, description, pictures, pictureCredit } = data;
-  console.log('hello', title);
+
   return (
     <>
       <div className='title position-absolute'>
@@ -28,13 +29,13 @@ export default function ProjectSimpleLayout({ data, textPosition }) {
             </div>
           );
         })}
-        <div className='mt-3'>
+        <div className='mt-3' onMouseOver={() => setIsTextBlurred(false)} onMouseOut={() => setIsTextBlurred(true)}>
           <ProjectDescription
             exhibition={exhibition}
             location={location}
             description={description}
             pictureCredit={pictureCredit}
-            isTextBlurred={false}
+            isTextBlurred={isTextBlurred}
           />
         </div>
       </div>

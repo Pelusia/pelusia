@@ -75,14 +75,28 @@ a {
   min-height: calc(100vh - map-get($spacers, 5));
   // min-height: -webkit-fill-available;
   padding-bottom: $footer-height !important;
+
+  @include media-breakpoint-up(sm) {
+    padding-bottom: $footer-sm-height !important;
+  }
 }
 
 #footer {
-  width: 100%;
+  width: 380px;
   height: $footer-height;
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @include media-breakpoint-up(sm) {
+    width: 100%;
+    height: $footer-sm-height !important;
+  }
+
+  .credits {
+    text-align: center;
+  }
 }
 
 #hero {
@@ -226,15 +240,18 @@ a {
 
 .blur-fade-in {
   p,
-  span {
+  span,
+  a {
     color: transparent;
     text-shadow: 0 0 12px rgba($base-font-color, 1);
+    border: none;
   }
 }
 
 .blur-fade-out {
   p,
-  span {
+  span,
+  a {
     color: $base-font-color;
     text-shadow: none;
   }
