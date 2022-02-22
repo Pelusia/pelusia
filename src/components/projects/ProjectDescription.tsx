@@ -1,8 +1,9 @@
-import classNames from 'classnames';
 import * as React from 'react';
+import classNames from 'classnames';
 
 export default function ProjectDescription({ exhibition, location, description, pictureCredit, isTextBlurred }) {
   const { html: descriptionHtml } = description.childMarkdownRemark;
+  console.log(descriptionHtml);
   return (
     <div
       className={classNames('description-max-width', {
