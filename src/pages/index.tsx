@@ -86,7 +86,7 @@ export const query = graphql`
           exhibition
           location
           date(formatString: "MMMM YYYY")
-          description {
+          description: activeDescription {
             childMarkdownRemark {
               html
             }

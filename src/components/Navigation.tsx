@@ -9,7 +9,6 @@ export default function Navigation({ brand, links, location, bio }) {
   const isHomePage = location?.pathname === '/';
 
   const showInfoBubble = (boo: boolean) => {
-    console.log('show trigger');
     if (infoIsShown === boo) {
       return;
     } else if (!isHomePage) {
