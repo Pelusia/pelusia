@@ -43,9 +43,18 @@ export function embedHtmlAnchor(href: string, opts: EmbedHtmlAnchorOpts = { targ
   return `<a href='${href}' ${opts?.targetBlank && targetStr}>${opts.displayStr ? opts.displayStr : href}</a>`;
 }
 
-export function getVh() {
-  return Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-}
 export function getVw() {
-  return Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+  if (typeof document !== 'undefined') {
+    return Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+  } else {
+    return 0;
+  }
+}
+
+export function getVh() {
+  if (typeof document !== 'undefined') {
+    return Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+  } else {
+    return 0;
+  }
 }
