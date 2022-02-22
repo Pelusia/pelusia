@@ -6,7 +6,7 @@ require('dotenv').config({
 const primary = '#ffffff';
 const background = '#000000';
 const author = 'Pelusia';
-const tagline = '';
+const tagline = 'Mateo Argerich';
 const siteUrl = 'https://pelusia.com';
 const noindex = [
   '/privacy-policy',
@@ -25,7 +25,8 @@ module.exports = {
     shortTitle: author,
     titleTemplate: `%s · ${author} · ${tagline}`,
     author,
-    description: '',
+    description:
+      'Online portfolio // Artist, performer, musician, architect and activist Mateo Argerich meets you at Pelusia, a magic realm of fertile sediments condensed into dust bunnies. Overlooked and fuzzy gatherings. Joyous Portals. Dust to dust.',
     siteUrl,
     links: [
       { name: 'Email', href: 'contact@pelusia.com' },
