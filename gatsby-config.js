@@ -29,7 +29,7 @@ module.exports = {
       'Online portfolio // Artist, performer, musician, architect and activist Mateo Argerich meets you at Pelusia, a magic realm of fertile sediments condensed into dust bunnies. Overlooked and fuzzy gatherings. Joyous Portals. Dust to dust.',
     siteUrl,
     links: [
-      { name: 'Email', href: 'contact@pelusia.com' },
+      { name: 'Email', href: 'mailto:contact@pelusia.com' },
       { name: 'Instagram', href: 'https://www.instagram.com/_pelusia/' },
       { name: 'YouTube', href: 'https://www.youtube.com/channel/UCDnf1mu6ENVF66sfLctSZFg' },
       { name: 'SoundCloud', href: 'https://soundcloud.com/user-431122371' },
