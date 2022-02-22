@@ -41,7 +41,6 @@ a {
 #info {
   width: $info-bubble-max-width;
   height: $info-bubble-max-width;
-  padding: 3rem;
   color: $black;
   text-align: center;
   background-image: url('../images/info-lg.png');
@@ -49,8 +48,17 @@ a {
   background-position: center;
   background-size: contain;
   top: 0.75rem;
-  right: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 100;
+
+  @include media-breakpoint-up(sm) {
+    width: $info-bubble-sm-max-width;
+    height: $info-bubble-sm-max-width;
+    right: 1rem;
+    left: unset;
+    transform: none;
+  }
 
   .content {
     top: 50%;
@@ -59,12 +67,21 @@ a {
     width: 300px;
   }
 
+  .link {
+    max-width: 2rem;
+    display: inline-block;
+
+    &.soundcloud {
+      max-width: 2.5rem;
+    }
+  }
+
   .link-icon {
-    max-height: 1.4rem;
+    max-height: 1.5rem;
     color: $black;
 
     &.soundcloud {
-      max-height: 2.2rem;
+      max-height: 2.5rem;
     }
   }
 }

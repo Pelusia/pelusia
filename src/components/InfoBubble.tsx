@@ -25,21 +25,26 @@ export default function InfoBubble({ brand, links, bio, isVisible }) {
       <div className='position-absolute content'>
         <h1 className='mb-4'>{brand}</h1>
         <div
-          className='bio mb-4'
+          className='bio mb-3'
           dangerouslySetInnerHTML={{
             __html: bio,
           }}
         ></div>
         <ul className='list-unstyled d-flex justify-content-center align-items-center'>
-          {links.map((link) => {
+          {links.map((link, i) => {
             const id = link.name.toLowerCase();
             return (
-              <li>
-                <a href={link.href} target='_blank' rel='noreferrer noopener'>
+              <li className={classNames({ 'me-4': i < links.length - 1 })}>
+                <a
+                  href={link.href}
+                  target='_blank'
+                  rel='noreferrer noopener'
+                  className={classNames('link', { soundcloud: id === 'soundcloud' })}
+                >
                   <img
                     src={mapLinkIdsToIcons[id]}
                     width='100%'
-                    className={classNames('link-icon w-100 me-4', { soundcloud: id === 'soundcloud' })}
+                    className={classNames('link-icon w-100', { soundcloud: id === 'soundcloud' })}
                     alt={`${link.name} icon`}
                   />
                 </a>
