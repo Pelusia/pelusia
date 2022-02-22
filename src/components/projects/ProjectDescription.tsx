@@ -23,7 +23,7 @@ export default function ProjectDescription({ exhibition, location, description, 
       <small
         className='credit'
         dangerouslySetInnerHTML={{
-          __html: pictureCredit.childMarkdownRemark.html,
+          __html: pictureCredit?.childMarkdownRemark.html || '',
         }}
       />
     </div>
