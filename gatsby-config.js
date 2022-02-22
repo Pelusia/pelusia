@@ -108,35 +108,7 @@ module.exports = {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: siteUrl,
-        sitemap: `${siteUrl}/sitemap/sitemap-index.xml`,
         policy: [{ userAgent: '*', allow: '/', disallow: noindex }],
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-sitemap',
-      options: {
-        query: `
-        {
-          allSitePage {
-            nodes {
-              path
-            }
-          }
-        }
-      `,
-        excludes: noindex,
-        resolveSiteUrl: () => siteUrl,
-        resolvePages: ({ allSitePage: { nodes: allPages } }) => {
-          return allPages.map((page) => {
-            return { ...page };
-          });
-        },
-        serialize: ({ path }) => {
-          return {
-            url: path,
-            lastmod: Date.now(),
-          };
-        },
       },
     },
   ],
