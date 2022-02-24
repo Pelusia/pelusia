@@ -37,7 +37,6 @@ export default function Index({ data, location }) {
             const { displayType } = project;
             const displayTypeId = simpleFormatString(displayType);
             const Project = mapDisplayTypeToLayout[displayTypeId];
-            console.log(project.activeDescription.childMarkdownRemark.html);
             return (
               <li
                 key={i}
