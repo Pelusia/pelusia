@@ -18,7 +18,7 @@ export default function ProjectDescription({ exhibition, location, description, 
       <p
         className='description'
         dangerouslySetInnerHTML={{
-          __html: descriptionHtml,
+          __html: `<div>${descriptionHtml}</div>`,
         }}
       />
       <small
