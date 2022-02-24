@@ -14,10 +14,10 @@ export default function ProjectDescription({ exhibition, location, description, 
         {exhibition ? <span className='exhibition me-2'>{exhibition},</span> : null}
         {location ? <span className='location me-2'>{location}</span> : null}
       </p>
-      <p
+      <div
         className='description'
         dangerouslySetInnerHTML={{
-          __html: `<div>${descriptionHtml}</div>`,
+          __html: descriptionHtml,
         }}
       />
       <small
