@@ -37,10 +37,14 @@ export function simpleFormatString(title: string, format: 'id' | 'headline' = 'i
 }
 
 // TODO: add html obfuscation
+const targetStr = "target='_blank' rel='noreferrer noopener'";
 type EmbedHtmlAnchorOpts = { targetBlank: boolean; displayStr?: string };
 export function embedHtmlAnchor(href: string, opts: EmbedHtmlAnchorOpts = { targetBlank: true }) {
-  const targetStr = "target='_blank' rel='noreferrer noopener'";
   return `<a href='${href}' ${opts?.targetBlank && targetStr}>${opts.displayStr ? opts.displayStr : href}</a>`;
+}
+
+export function addLinksTargetBlank(html: string) {
+  return html.replace(/<a/gm, `<a ${targetStr}`);
 }
 
 export function getVw() {

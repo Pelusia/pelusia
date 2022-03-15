@@ -1,5 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import { addLinksTargetBlank } from 'helpers';
 
 export default function ProjectDescription({ exhibition, location, description, pictureCredit, isTextBlurred }) {
   const { html: descriptionHtml } = description.childMarkdownRemark;
@@ -17,7 +18,7 @@ export default function ProjectDescription({ exhibition, location, description, 
       <div
         className='description'
         dangerouslySetInnerHTML={{
-          __html: descriptionHtml,
+          __html: addLinksTargetBlank(descriptionHtml),
         }}
       />
       <small
