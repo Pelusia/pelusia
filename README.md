@@ -1,3 +1,3 @@
-## Contentful Sass Gatsby Starter
+## pelusia.com
 
-- add your env files to `.gitignore`
+Source code for Mateo Argerich's website
