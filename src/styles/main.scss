@@ -29,6 +29,11 @@ a {
     border: none;
   }
 
+  @include media-breakpoint-up(lg) {
+    top: 40px;
+    right: 60px;
+  }
+
   .info-link {
     width: 60px;
 
