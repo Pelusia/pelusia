@@ -27,7 +27,7 @@ export default function Footer({ title, links }) {
             Maison C.C.
           </a>
           &nbsp; &amp; development by&nbsp;
-          <a href='https://vincentreynaud.de' target='_blank' rel='noopener noreferrer' className='text-nowrap'>
+          <a href='https://vincentreynaud.digital' target='_blank' rel='noopener noreferrer' className='text-nowrap'>
             Vincent Reynaud
           </a>
         </p>
